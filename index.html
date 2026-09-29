@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+  <title>Turn RPG Battle Prototype</title>
+  <link rel="stylesheet" href="css/battle.css">
+</head>
+<body>
+  <main id="game" class="battlefield">
+    <header class="topbar">
+      <div class="turn">TURN <span id="turnNumber">1</span></div>
+      <div id="turnText">PLAYER TURN</div>
+    </header>
+
+    <section class="arena" id="arena">
+      <div class="unit enemy" id="goblin">
+        <div class="nameplate">GOBLIN <span id="enemyHpText">120 / 120</span></div>
+        <div class="hp"><i id="enemyHp"></i></div>
+        <div class="goblinSprite">👹</div>
+        <div class="status" id="enemyStatus"></div>
+      </div>
+
+      <div class="unit player" id="player">
+        <div class="playerSprite">⚔️</div>
+        <div class="nameplate">PLAYER <span id="playerHpText">180 / 180</span></div>
+        <div class="hp"><i id="playerHp"></i></div>
+      </div>
+
+      <div id="damage" class="damage"></div>
+      <div id="impact" class="impact">✦</div>
+    </section>
+
+    <section class="commandPanel">
+      <div class="log" id="battleLog">전투를 시작한다.</div>
+      <div class="commands">
+        <button data-action="attack">⚔ 공격</button>
+        <button data-action="skill">🔥 파워 슬래시</button>
+        <button data-action="defend">🛡 방어</button>
+        <button data-action="potion">🧪 포션</button>
+      </div>
+    </section>
+
+    <div class="overlay hidden" id="result">
+      <div class="resultCard">
+        <h1 id="resultTitle">VICTORY</h1>
+        <p id="resultText"></p>
+        <button id="restart">다시 전투</button>
+      </div>
+    </div>
+  </main>
+  <script src="js/battle-state.js"></script>
+  <script src="js/animation.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/battle.js"></script>
+</body>
+</html>
