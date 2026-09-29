@@ -1,0 +1,1 @@
+window.BattleState={maxPlayerHp:180,playerHp:180,maxEnemyHp:120,enemyHp:120,turn:1,phase:'player',defending:false,ended:false,potions:2};
